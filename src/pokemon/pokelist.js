@@ -5,7 +5,7 @@ import PokeItem from './pokeitem.js'
 
 export default class PokeList extends Component {
     render() {
-        console.log(pokemon);
+
         return (
             <ul className='list'>
                 { pokemon.map(pokeObject =>
