@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
-import SearchPage from './SearchPage.js';
-import HomePage from './HomePage.js';
-import Header from './Header.js';
+import Header from './header/header.js';
+import SearchPage from './search/search.js';
+import HomePage from './home/home';
 
 export default class App extends Component {
   render() {
@@ -28,9 +27,6 @@ export default class App extends Component {
             />
           </Switch>
         </Router>
-        <footer>
-          Contact info goes here
-                </footer>
       </div>
     )
   }
