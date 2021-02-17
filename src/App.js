@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import Header from './header/header.js';
+import SearchPage from './search/search.js';
+import HomePage from './home/home';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
-import Header from './header/header.js';
-import SearchPage from './search/search.js';
-import HomePage from './home/home';
 
 export default class App extends Component {
   render() {
