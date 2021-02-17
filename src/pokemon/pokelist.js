@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
-import pokemon from '../data'
-import PokeItem from './pokeitem.js'
+import PokeItem from '../pokemon/pokeitem.js'
 
 
 export default class PokeList extends Component {
+
+
+
     render() {
 
+
         return (
-            <ul className='list'>
-                { pokemon.map(pokeObject =>
-                    <PokeItem
-                        key={pokeObject.pokemon}
-                        pokeItemProp={pokeObject}
-                    />)}
-            </ul>
+            <div>
+
+
+                <ul className='list' >
+                    {
+                        this.props.filteredPokemon.map(pokeObject =>
+                            <PokeItem
+                                key={pokeObject.pokemon}
+                                pokemomItemProp={pokeObject}
+                            />)
+                    }
+                </ul>
+            </div>
         )
     }
 }
