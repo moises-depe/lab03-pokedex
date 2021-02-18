@@ -8,7 +8,6 @@ export default class Dropdown extends Component {
                     this.props.options.map(pokemon =>
                         <option value={pokemon}>{pokemon}</option>)
                 }
-
             </select>
         )
     }
