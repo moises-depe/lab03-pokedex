@@ -8,7 +8,7 @@ export default class searchbar extends Component {
                 <input type='text'
                     value={this.props.currentValue}
                     onChange={this.props.handleChange} />
-                <button onClick={this.props.buttonClick}>start</button>
+                <button onClick={this.props.handleClick}>start</button>
             </div>
         )
     }
