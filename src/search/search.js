@@ -79,6 +79,9 @@ export default class SearchPage extends Component {
 
     render() {
 
+
+        const lastPage = Math.ceil(this.state.totalPokemon / this.state.perPage);
+
         return (
             <>
                 <div>
@@ -100,6 +103,9 @@ export default class SearchPage extends Component {
                     <Sort currentValue={this.state.sortOrder} handleChange={this.handleSortOrder}
                         options={[{ value: 'asc', name: 'Ascending' },
                         { value: 'desc', name: 'Descending' }]} />
+                    <h3>Page {this.state.currentPage}</h3>
+                    <button onClick={this.handlePreviousClick} disabled={this.state.currentPage === 1}>Previous</button>
+                    <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
                 </div>
                 <section>
                     {this.state.loading
