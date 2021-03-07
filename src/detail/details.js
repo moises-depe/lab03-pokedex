@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import Spinner from '../search/spinner.js'
+
 export default class DetailPage extends Component {
     state = {
         pokemonData: {},
@@ -13,7 +14,7 @@ export default class DetailPage extends Component {
 
         this.setState({
             loading: false,
-            pokemonData: data.body.results.find(item => item.pokemon === this.props.match.params.pokemonName),
+            pokemonData: data.body.results(item => item.pokemon === this.props.match.params.pokemonName),
         });
     }
     render() {

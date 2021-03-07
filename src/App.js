@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './header/header.js';
 import SearchPage from './search/search.js';
+import DetailPage from './detail/details.js';
 import HomePage from './home/home';
 import {
   BrowserRouter as Router,
@@ -23,6 +24,11 @@ export default class App extends Component {
             <Route
               path="/search"
               exact
+              render={(routerProps) => <SearchPage {...routerProps} />}
+            />
+            <Route
+              path="/:pokemonName"
+              exact cocomponent={DetailPage}
               render={(routerProps) => <SearchPage {...routerProps} />}
             />
           </Switch>
