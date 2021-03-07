@@ -35,6 +35,7 @@ export default class SearchPage extends Component {
     }
 
     handleClick = async () => {
+        await this.setState({ currentPage: 1 });
         await this.fetchPokemon();
     }
 
@@ -58,6 +59,23 @@ export default class SearchPage extends Component {
             query: e.target.value
         })
     }
+    handlePerPage = (e) => {
+        this.setState({
+            perPage: e.target.value
+        })
+    }
+    handleNextClick = async () => {
+        await this.setState({
+            currentPage: this.state.currentPage + 1
+        })
+        await this.fetchPokemon();
+    }
+    handlePreviousClick = async () => {
+        await this.setState({
+            currentPage: this.state.currentPage - 1
+        })
+        await this.fetchPokemon();
+    }
 
     render() {
 
@@ -67,6 +85,12 @@ export default class SearchPage extends Component {
                     <SearchBar currentValue={this.state.query}
                         handleChange={this.handleQuery}
                         handleClick={this.handleClick} />
+                        Results Per Page:<select onChange={this.handlePerPage}>
+                        <option value={10}>10</option>
+                        <option value={50}>50</option>
+                        <option value={75}>75</option>
+                        <option value={100}>100</option>
+                    </select>
             Sort By:
                  <Sort currentValue={this.state.sortBy} handleChange={this.handleSortBy}
                         options={[{ value: 'pokemon', name: 'Pokemon' },
