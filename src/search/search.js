@@ -6,6 +6,7 @@ import PokeList from '../pokemon/pokelist.js';
 import request from 'superagent';
 import '../App.css';
 
+
 export default class SearchPage extends Component {
     state = {
         pokemonData: [],
