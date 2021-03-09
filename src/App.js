@@ -28,8 +28,8 @@ export default class App extends Component {
             />
             <Route
               path="/:pokemonName"
-              exact cocomponent={DetailPage}
-              render={(routerProps) => <SearchPage {...routerProps} />}
+              exact
+              render={(routerProps) => <DetailPage {...routerProps} />}
             />
           </Switch>
         </Router>
