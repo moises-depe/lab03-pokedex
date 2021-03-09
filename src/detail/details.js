@@ -14,7 +14,7 @@ export default class DetailPage extends Component {
 
         this.setState({
             loading: false,
-            pokemonData: data.body.results(item => item.pokemon === this.props.match.params.pokemonName),
+            pokemonData: data.body.results[0](item => item.pokemon === this.props.match.params.pokemonName),
         });
     }
     render() {
